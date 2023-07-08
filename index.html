@@ -17,16 +17,16 @@
   </head>
   <body>
     <header>
-      <div class="logo">
+      <div class="logo shootLines">
         <img
           src="https://cdn.iconscout.com/icon/premium/png-512-thumb/superman-1876914-1589699.png?f=avif&w=256"
           alt=""
         />
       </div>
       <nav id="navbar">
-        <a href="#">Home</a>
-        <a href="#">About</a>
-        <a href="#">Contact</a>
+        <a class="shootLines" href="#">Home</a>
+        <a class="shootLines" href="#">About</a>
+        <a class="shootLines" href="#">Contact</a>
       </nav>
     </header>
     <main>
@@ -66,15 +66,28 @@
           <h2>Register Now</h2>
           <form>
             <label for="name">Name:</label><br />
-            <input class="inputbox" type="text" id="name" name="name" /><br />
+            <input
+              class="inputbox"
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Enter your name..."
+            /><br />
             <label for="email">Email:</label><br />
-            <input class="inputbox" type="text" id="email" name="email" /><br />
+            <input
+              class="inputbox"
+              type="text"
+              id="email"
+              name="email"
+              placeholder="Enter your email..."
+            /><br />
             <label for="phoneno">Phone No:</label><br />
             <input
               class="inputbox"
               type="tel"
               id="phoneno"
               name="phoneno"
+              placeholder="Enter your phone number..."
             /><br />
             <input type="submit" value="Submit" />
           </form>

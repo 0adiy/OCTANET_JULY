@@ -1,6 +1,6 @@
 // Taken from https://codepen.io/mprquinn/pen/OmOMrR
 
-const links = document.querySelectorAll("a");
+const links = document.querySelectorAll(".shootLines");
 
 links.forEach((link) => link.addEventListener("mouseenter", shootLines));
 
