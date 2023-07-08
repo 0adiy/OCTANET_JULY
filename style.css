@@ -67,7 +67,7 @@ header nav a {
 main {
   background: url("https://img.freepik.com/free-vector/comic-abstract-blue-background_225004-669.jpg?w=1060&t=st=1688810817~exp=1688811417~hmac=21b9e27c7762c0d7f5b8749ff54085bcd44f2a7c47abde8c84b47e11fae78888")
     no-repeat center / cover;
-  background-attachment: fixed;
+  background-attachment: scroll;
 }
 
 .hero {
