@@ -22,7 +22,7 @@ body {
   font-size: 1.6rem;
   font-family: "Comic Sans MS", Arial, Helvetica, cursive;
   background-color: var(--bg-white);
-  color: white;
+  color: black;
 }
 
 /* header */
@@ -41,6 +41,10 @@ header .logo {
   width: 4rem;
 }
 
+header .logo:hover {
+  scale: 1.1;
+}
+
 header .logo img {
   border-radius: 50%;
   box-shadow: 4px 4px black;
@@ -54,7 +58,7 @@ header nav {
   flex-direction: row;
   justify-content: space-around;
   gap: 5rem;
-  margin: auto 2rem;
+  margin: auto 5rem auto auto;
   font-size: 1.5rem;
 }
 
@@ -65,13 +69,20 @@ header nav a {
     Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
+header nav a:hover {
+  color: var(--main-yellow);
+  scale: 1.1;
+}
+
 /* main */
 main {
   background: url("https://img.freepik.com/free-vector/comic-abstract-blue-background_225004-669.jpg?w=1060&t=st=1688810817~exp=1688811417~hmac=21b9e27c7762c0d7f5b8749ff54085bcd44f2a7c47abde8c84b47e11fae78888")
     no-repeat center / cover;
   background-attachment: scroll;
+  padding: 0 0 1rem 0;
 }
 
+/* hero */
 .hero {
   width: 100%;
   height: 80vh;
@@ -87,6 +98,33 @@ h1 {
   letter-spacing: 5px;
   text-shadow: 2px 3px 0 black;
 }
+
+.hero-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-text p {
+  background: radial-gradient(circle, lightcoral 10%, tomato);
+  color: black;
+  text-shadow: 1px 1px 0 white;
+  box-shadow: 4px 4px black;
+  font-size: 1rem;
+  padding: 1rem;
+  border-radius: 10px;
+  font-family: "Comic Sans MS", Arial, Helvetica, cursive;
+  font-weight: bold;
+  margin-top: 2rem;
+}
+
+section {
+  margin: 2rem;
+}
+
 h2 {
   text-transform: uppercase;
   font-size: 2rem;
@@ -101,38 +139,51 @@ h2 {
   width: max-content;
 }
 
-.hero-text {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-  backdrop-filter: blur(0.5rem);
+/* speech */
+.speech {
+  background-color: #fff;
+  border: solid 2px #000;
+  border-radius: 12px;
+  display: inline-block;
+  margin: 0.5em;
+  padding: 0.5em 1em;
+  position: relative;
 }
 
-.hero-text p {
-  background-color: rgba(0, 0, 0, 0.5);
-  font-size: 1rem;
-  padding: 1rem;
-  border-radius: 10px;
-  color: whitesmoke;
-  font-family: "Comic Sans MS", Arial, Helvetica, cursive;
-  margin-top: 2rem;
+.speech:before {
+  border: solid 12px transparent;
+  border-left: solid 12px #000;
+  border-top: solid 12px #000;
+  bottom: -24px;
+  content: "";
+  height: 0;
+  left: 11px;
+  position: absolute;
+  transform: skew(-15deg);
+  width: 0;
 }
 
-section {
-  margin: 2rem 2rem 0 2rem;
+.speech:after {
+  border: solid 10px transparent;
+  border-left: solid 10px #fff;
+  border-top: solid 10px #fff;
+  bottom: -19px;
+  content: "";
+  height: 0;
+  left: 14px;
+  position: absolute;
+  transform: skew(-15deg);
+  width: 0;
 }
 
 /* form */
 
 form {
   font-family: "Comic Sans MS", cursive;
-  background-color: #1a9ae4;
+  background: radial-gradient(circle, palegreen, 30%, yellowgreen);
   color: black;
-  padding: 20px;
-  border: 4px solid black;
+  padding: 1.5rem;
+  /* border: 4px solid black; */
   border-radius: 1rem;
   box-shadow: 4px 4px black;
 }
@@ -141,13 +192,57 @@ input {
   width: 100%;
   padding: 12px;
   margin: 8px 0;
-  box-sizing: border-box;
+}
+
+.inputbox {
+  border-radius: 0.5rem;
+  background-color: whitesmoke;
+  font-size: 1.4rem;
+  transition: all 0.5s;
+}
+
+.inputbox:hover,
+.inputbox:focus {
+  box-shadow: inset 3px 3px 4px rgba(0, 0, 0, 0.5), inset -4px -4px 4px white;
 }
 
 input[type="submit"] {
   background-color: #4caf50;
+  font-size: 1.5rem;
+  font-weight: bold;
+  font-family: "Comic Sans Ms", Arial, Helvetica, cursive;
   color: white;
-  padding: 12px;
-  margin: 8px 0;
+  padding: 1rem;
+  margin: 0.5rem auto;
   width: auto;
+  border-radius: 0.5rem;
+  border: none;
+  transition: all 0.5s;
+}
+
+input[type="submit"]:hover {
+  background-color: #3d8f41;
+  scale: 1.1;
+}
+
+/* footer */
+footer {
+  background: radial-gradient(circle, yellow 50%, orange);
+  color: black;
+  text-shadow: 1px 1px 0 white;
+  padding: 20px;
+}
+
+.footer_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer_container table {
+  border-collapse: collapse;
+}
+
+.footer_container table td {
+  padding: 0 1rem;
 }
