@@ -11,7 +11,7 @@ function shootLines(e) {
       y: itemDim.bottom - itemDim.top,
     },
     shapes = ["line", "zigzag"],
-    colors = ["#2FB5F3", "#FF0A47", "#FF0AC2", "#47FF0A"];
+    colors = ["FBE551", "#FF0A47", "#FF0AC2", "#47FF0A"];
 
   const chosenC = Math.floor(Math.random() * colors.length),
     chosenS = Math.floor(Math.random() * shapes.length);
