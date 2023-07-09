@@ -107,6 +107,8 @@ h1 {
   color: white;
   letter-spacing: 5px;
   text-shadow: 2px 3px 0 black;
+  text-align: center;
+  margin: 0 1rem;
 }
 
 .hero-text {
@@ -186,6 +188,11 @@ h2 {
   color: black;
   margin: 1rem 0 0.5rem 0;
   width: max-content;
+}
+
+.sub {
+  font-weight: bold;
+  text-decoration: underline;
 }
 
 /* speech */
