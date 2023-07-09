@@ -65,7 +65,7 @@ header nav {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  gap: 5rem;
+  gap: 5em;
   margin: auto 5rem auto auto;
   font-size: 1.5rem;
 }
@@ -354,7 +354,10 @@ footer h3 {
 /* phones */
 @media screen and (max-width: 450px) {
   html {
-    font-size: 8px;
+    font-size: 10px;
+  }
+  header nav {
+    gap: 1em;
   }
 }
 /* tablets */
@@ -362,10 +365,16 @@ footer h3 {
   html {
     font-size: 12px;
   }
+  header nav {
+    gap: 2em;
+  }
 }
 /* lappy */
 @media screen and (max-width: 1228px) and (min-width: 800px) {
   html {
     font-size: 16px;
+  }
+  header nav {
+    gap: 3em;
   }
 }
