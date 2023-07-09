@@ -26,6 +26,7 @@ body {
   background: url("https://img.freepik.com/free-vector/comic-abstract-blue-background_225004-669.jpg")
     no-repeat center / cover;
   background-attachment: fixed;
+  min-height: fit-content;
 }
 
 /* header */
@@ -105,7 +106,7 @@ h1 {
   letter-spacing: 5px;
   text-shadow: 2px 3px 0 black;
   text-align: center;
-  margin: 0 1rem;
+  margin: 0 1em;
 }
 
 .hero-text {
@@ -328,7 +329,7 @@ footer {
   margin-left: 1.5rem;
   width: fit-content;
   border-radius: 3rem;
-  padding: 1%;
+  padding: 1em;
   backdrop-filter: blur(10px) brightness(0.8) saturate(0.7);
 }
 
@@ -347,4 +348,24 @@ footer h3 {
 /* mojo */
 [data-name="mojs-shape"] {
   z-index: 100;
+}
+
+/* ### Media queries ### */
+/* phones */
+@media screen and (max-width: 450px) {
+  html {
+    font-size: 8px;
+  }
+}
+/* tablets */
+@media screen and (max-width: 800px) and (min-width: 450px) {
+  html {
+    font-size: 12px;
+  }
+}
+/* lappy */
+@media screen and (max-width: 1228px) and (min-width: 800px) {
+  html {
+    font-size: 16px;
+  }
 }
