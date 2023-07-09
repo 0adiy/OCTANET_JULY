@@ -120,16 +120,17 @@ h1 {
 
 .hero-text p {
   background: radial-gradient(
-    circle,
-    #ff6448 0%,
-    #ff6448 25%,
-    #ff7c48 25%,
-    #ff7c48 50%,
-    #ff9448 50%,
-    #ff9448 75%,
-    #ff9448 75%,
-    #ff9448 100%
-  );
+      circle,
+      #ff6448 0%,
+      #ff6448 25%,
+      #ff7c48 25%,
+      #ff7c48 50%,
+      #ff9448 50%,
+      #ff9448 75%,
+      #ff9448 75%,
+      #ff9448 100%
+    )
+    no-repeat center / cover;
   color: black;
   text-shadow: 1px 1px 0 white;
   box-shadow: 4px 4px black;
@@ -139,6 +140,34 @@ h1 {
   font-family: "Comic Sans MS", Arial, Helvetica, cursive;
   font-weight: bold;
   margin-top: 2rem;
+  animation: unSpreadRadialGradient 0.5s ease-in-out;
+}
+
+.hero-text a {
+  text-decoration: none;
+}
+
+.hero-text p:hover {
+  animation: spreadRadialGradient 0.5s ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes spreadRadialGradient {
+  from {
+    background-size: 100%;
+  }
+  to {
+    background-size: 200%;
+  }
+}
+
+@keyframes unSpreadRadialGradient {
+  from {
+    background-size: 200%;
+  }
+  to {
+    background-size: 100%;
+  }
 }
 
 section {
@@ -214,7 +243,6 @@ form {
     );
   color: black;
   padding: 1.5rem;
-  /* border: 4px solid black; */
   border-radius: 1rem;
   box-shadow: 4px 4px black;
   margin: 2rem auto;
@@ -298,4 +326,9 @@ footer h3 {
 
 .footer_container table td {
   padding: 0 0.5rem;
+}
+
+/* mojo */
+[data-name="mojs-shape"] {
+  z-index: 100;
 }
