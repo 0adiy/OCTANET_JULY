@@ -55,7 +55,7 @@ header .logo:hover {
 header .logo img {
   border-radius: 50%;
   box-shadow: 4px 4px black;
-  border: 2px solid yellow;
+  border: 4px solid var(--main-yellow);
   width: 100%;
 }
 
@@ -193,6 +193,14 @@ h2 {
 .sub {
   font-weight: bold;
   text-decoration: underline;
+}
+
+.child-img {
+  display: flex;
+  justify-content: center;
+}
+.child-img img {
+  width: 50%;
 }
 
 /* speech */
