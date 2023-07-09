@@ -23,8 +23,7 @@ body {
   font-family: "Comic Sans MS", Arial, Helvetica, cursive;
   background-color: var(--bg-white);
   color: black;
-  background: url("https://img.freepik.com/free-vector/comic-abstract-blue-background_225004-669.jpg")
-    no-repeat center / cover;
+  background: url("./images/bg.jpeg") no-repeat center / cover;
   background-attachment: fixed;
   min-height: fit-content;
 }
@@ -35,8 +34,6 @@ header {
   justify-content: space-between;
   width: 100%;
   align-items: center;
-  /* background: url("https://img.freepik.com/free-vector/comic-abstract-blue-background_225004-669.jpg?w=1060&t=st=1688810817~exp=1688811417~hmac=21b9e27c7762c0d7f5b8749ff54085bcd44f2a7c47abde8c84b47e11fae78888")
-    no-repeat center / cover; */
   background-attachment: fixed;
   backdrop-filter: blur(10px);
   padding: 1rem 0;
@@ -93,7 +90,7 @@ main {
   width: 100%;
   height: 100vh;
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("hero.jpeg") no-repeat center / cover;
+    url("./images/hero.jpeg") no-repeat center / cover;
   background-attachment: fixed;
 }
 
@@ -320,6 +317,7 @@ footer {
   text-shadow: 1px 1px 0 black;
   padding: 1rem;
   font-size: 1rem;
+  display: flex;
 }
 
 .footer_container {
@@ -328,6 +326,7 @@ footer {
   align-items: flex-start;
   margin-left: 1.5rem;
   width: fit-content;
+  height: fit-content;
   border-radius: 3rem;
   padding: 1em;
   backdrop-filter: blur(10px) brightness(0.8) saturate(0.7);
@@ -345,6 +344,21 @@ footer h3 {
   padding: 0 0.5rem;
 }
 
+/* bighead */
+.bighead {
+  position: sticky;
+  width: 200px;
+  bottom: 20px;
+  right: 0px;
+  margin: -10%;
+  z-index: 99;
+}
+
+.bighead img {
+  width: 100px;
+  right: 0;
+  top: 0;
+}
 /* mojo */
 [data-name="mojs-shape"] {
   z-index: 100;
