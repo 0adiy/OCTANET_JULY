@@ -6,7 +6,16 @@ import { onAuthStateChanged, getAuth } from "firebase/auth";
 
 function LandingPage() {
   return (
-    <Container maxWidth='sm'>
+    <Container
+      maxWidth='sm'
+      sx={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+        minHeight: "80vh",
+      }}
+    >
       <Typography variant='h4' align='center' gutterBottom>
         Welcome to Todo List
       </Typography>

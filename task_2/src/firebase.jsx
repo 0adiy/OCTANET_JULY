@@ -33,6 +33,32 @@ async function registerWithEmailAndPassword(email, password) {
       uid: user.uid,
       authProvider: "local",
       email,
+      todos: [
+        {
+          text: "Todo 1",
+          completed: false,
+          priority: "normal",
+          deadline: new Date(),
+        },
+        {
+          text: "Todo 2",
+          completed: true,
+          priority: "high",
+          deadline: new Date(),
+        },
+        {
+          text: "Todo 3",
+          completed: false,
+          priority: "normal",
+          deadline: new Date(),
+        },
+        {
+          text: "Todo 4",
+          completed: true,
+          priority: "high",
+          deadline: new Date(),
+        },
+      ],
     });
     return token;
   } catch (error) {
@@ -57,4 +83,4 @@ async function logout() {
   await signOut(auth);
 }
 
-export { registerWithEmailAndPassword, loginWithEmailAndPassword, logout };
+export { registerWithEmailAndPassword, loginWithEmailAndPassword, logout, db };
