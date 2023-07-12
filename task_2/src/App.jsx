@@ -8,7 +8,7 @@ import MenuAppBar from "./components/MenuAppBar";
 
 function App() {
   const [isLoggedIn, setisLoggedIn] = useState(false);
-
+  const [user, setUser] = useState({});
   const [darkMode, setDarkMode] = useState(true);
 
   const theme = createTheme({
@@ -31,8 +31,9 @@ function App() {
           isDark={darkMode}
           isLoggedIn={isLoggedIn}
           setisLoggedIn={setisLoggedIn}
+          setUser={setUser}
         />
-        {isLoggedIn ? <TodoListPage /> : <LandingPage />}
+        {isLoggedIn ? <TodoListPage user={user} /> : <LandingPage />}
       </Box>
     </ThemeProvider>
   );

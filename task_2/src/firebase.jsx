@@ -22,8 +22,6 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
 
-const googleProvider = new GoogleAuthProvider();
-
 async function registerWithEmailAndPassword(email, password) {
   try {
     const res = await createUserWithEmailAndPassword(auth, email, password);
@@ -38,25 +36,21 @@ async function registerWithEmailAndPassword(email, password) {
           text: "Todo 1",
           completed: false,
           priority: "normal",
-          deadline: new Date(),
         },
         {
           text: "Todo 2",
           completed: true,
           priority: "high",
-          deadline: new Date(),
         },
         {
           text: "Todo 3",
           completed: false,
           priority: "normal",
-          deadline: new Date(),
         },
         {
           text: "Todo 4",
           completed: true,
           priority: "high",
-          deadline: new Date(),
         },
       ],
     });

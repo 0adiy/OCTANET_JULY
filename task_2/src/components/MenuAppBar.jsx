@@ -7,11 +7,20 @@ import RegisterDialog from "./registerDialog";
 import { logout } from "../firebase";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 
-const MyAppBar = ({ setisLoggedIn, isLoggedIn, isDark, onThemeChange }) => {
+const MyAppBar = ({
+  setisLoggedIn,
+  isLoggedIn,
+  isDark,
+  onThemeChange,
+  setUser,
+}) => {
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(getAuth(), (user) => {
-      if (user) setisLoggedIn(true);
-      else setisLoggedIn(false);
+      if (user) {
+        console.log(user);
+        setisLoggedIn(true);
+        setUser(user);
+      } else setisLoggedIn(false);
     });
 
     return () => unsubscribe();
