@@ -5,9 +5,6 @@ import LoginDialog from "../components/loginDialog";
 import { onAuthStateChanged, getAuth } from "firebase/auth";
 
 function LandingPage() {
-  const [registerDialog, setRegisterDialog] = useState(false);
-  const [loginDialog, setLoginDialog] = useState(false);
-
   const auth = getAuth();
   onAuthStateChanged(auth, (user) => {
     if (user) {
@@ -24,24 +21,9 @@ function LandingPage() {
         Keep track of your tasks and never forget anything again!
       </Typography>
       <div style={{ display: "flex", justifyContent: "center" }}>
-        <Button
-          variant='contained'
-          color='primary'
-          style={{ marginRight: 8 }}
-          onClick={() => setRegisterDialog(true)}
-        >
-          Register
-        </Button>
-        <Button
-          variant='outlined'
-          color='primary'
-          onClick={() => setLoginDialog(true)}
-        >
-          Login
-        </Button>
+        <RegisterDialog />
+        <LoginDialog />
       </div>
-      <RegisterDialog setDialog={setRegisterDialog} open={registerDialog} />
-      <LoginDialog setDialog={setLoginDialog} open={loginDialog} />
     </Container>
   );
 }

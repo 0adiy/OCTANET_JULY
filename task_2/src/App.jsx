@@ -1,4 +1,3 @@
-import "./App.css";
 import { useState } from "react";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { ThemeProvider, createTheme } from "@mui/material/styles";

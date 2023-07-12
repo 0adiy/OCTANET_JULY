@@ -53,4 +53,8 @@ async function loginWithEmailAndPassword(email, password) {
   }
 }
 
-export { registerWithEmailAndPassword, loginWithEmailAndPassword };
+async function logout() {
+  await signOut(auth);
+}
+
+export { registerWithEmailAndPassword, loginWithEmailAndPassword, logout };
