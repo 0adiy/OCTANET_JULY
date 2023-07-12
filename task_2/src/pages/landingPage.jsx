@@ -5,13 +5,6 @@ import LoginDialog from "../components/loginDialog";
 import { onAuthStateChanged, getAuth } from "firebase/auth";
 
 function LandingPage() {
-  const auth = getAuth();
-  onAuthStateChanged(auth, (user) => {
-    if (user) {
-      setDialog(false);
-    }
-  });
-
   return (
     <Container maxWidth='sm'>
       <Typography variant='h4' align='center' gutterBottom>
