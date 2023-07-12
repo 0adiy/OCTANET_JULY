@@ -9,22 +9,20 @@ import {
   List,
   ListItem,
 } from "@mui/material";
-import { registerWithEmailAndPassword } from "../firebase.jsx";
+import { loginWithEmailAndPassword } from "../firebase.jsx";
 
-function RegisterDialog({ setDialog, open }) {
+function LoginDialog({ setDialog, open }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const handleRegister = () => {
-    registerWithEmailAndPassword(email, password);
+  const handleLogin = () => {
+    loginWithEmailAndPassword(email, password);
   };
 
-  const handleClose = () => {
-    setDialog(false);
-  };
+  const handleClose = () => setDialog(false);
 
   return (
     <Dialog open={open} onClose={handleClose}>
-      <DialogTitle>Register</DialogTitle>
+      <DialogTitle>Login</DialogTitle>
       <DialogContent>
         <List>
           <ListItem>
@@ -48,8 +46,8 @@ function RegisterDialog({ setDialog, open }) {
         </List>
       </DialogContent>
       <DialogActions>
-        <Button variant='contained' color='primary' onClick={handleRegister}>
-          Register
+        <Button variant='contained' color='primary' onClick={handleLogin}>
+          Login
         </Button>
         <Button onClick={handleClose} color='primary'>
           Cancel
@@ -59,4 +57,4 @@ function RegisterDialog({ setDialog, open }) {
   );
 }
 
-export default RegisterDialog;
+export default LoginDialog;

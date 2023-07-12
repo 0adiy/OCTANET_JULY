@@ -1,9 +1,20 @@
 import React, { useState } from "react";
 import { Button, Container, Typography } from "@mui/material";
 import RegisterDialog from "../components/registerDialog";
+import LoginDialog from "../components/loginDialog";
+import { onAuthStateChanged, getAuth } from "firebase/auth";
 
 function LandingPage() {
-  const [dialog, setDialog] = useState(true);
+  const [registerDialog, setRegisterDialog] = useState(false);
+  const [loginDialog, setLoginDialog] = useState(false);
+
+  const auth = getAuth();
+  onAuthStateChanged(auth, (user) => {
+    if (user) {
+      setDialog(false);
+    }
+  });
+
   return (
     <Container maxWidth='sm'>
       <Typography variant='h4' align='center' gutterBottom>
@@ -13,14 +24,24 @@ function LandingPage() {
         Keep track of your tasks and never forget anything again!
       </Typography>
       <div style={{ display: "flex", justifyContent: "center" }}>
-        <Button variant='contained' color='primary' style={{ marginRight: 8 }}>
+        <Button
+          variant='contained'
+          color='primary'
+          style={{ marginRight: 8 }}
+          onClick={() => setRegisterDialog(true)}
+        >
           Register
         </Button>
-        <Button variant='outlined' color='primary'>
+        <Button
+          variant='outlined'
+          color='primary'
+          onClick={() => setLoginDialog(true)}
+        >
           Login
         </Button>
       </div>
-      {dialog ? <RegisterDialog setDialog={setDialog} /> : null}
+      <RegisterDialog setDialog={setRegisterDialog} open={registerDialog} />
+      <LoginDialog setDialog={setLoginDialog} open={loginDialog} />
     </Container>
   );
 }
