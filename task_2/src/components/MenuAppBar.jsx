@@ -5,27 +5,14 @@ import Brightness7Icon from "@mui/icons-material/Brightness7";
 import LoginDialog from "./loginDialog";
 import RegisterDialog from "./registerDialog";
 import { logout } from "../firebase";
-import { getAuth, onAuthStateChanged } from "firebase/auth";
 
-const MyAppBar = ({
+function MyAppBar({
   setisLoggedIn,
   isLoggedIn,
   isDark,
   onThemeChange,
   setUser,
-}) => {
-  useEffect(() => {
-    const unsubscribe = onAuthStateChanged(getAuth(), (user) => {
-      if (user) {
-        console.log(user);
-        setisLoggedIn(true);
-        setUser(user);
-      } else setisLoggedIn(false);
-    });
-
-    return () => unsubscribe();
-  }, []);
-
+}) {
   return (
     <AppBar position='static' sx={{ bgcolor: isDark ? null : "#333" }}>
       <Toolbar>
@@ -51,6 +38,6 @@ const MyAppBar = ({
       </Toolbar>
     </AppBar>
   );
-};
+}
 
 export default MyAppBar;

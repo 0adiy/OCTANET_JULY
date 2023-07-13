@@ -33,24 +33,24 @@ async function registerWithEmailAndPassword(email, password) {
       email,
       todos: [
         {
-          text: "Todo 1",
+          text: "Buy groceries",
           completed: false,
-          priority: "normal",
+          priority: 3,
         },
         {
-          text: "Todo 2",
+          text: "Finish project report",
           completed: true,
-          priority: "high",
+          priority: 2,
         },
         {
-          text: "Todo 3",
+          text: "Call mom",
           completed: false,
-          priority: "normal",
+          priority: 3,
         },
         {
-          text: "Todo 4",
+          text: "Customize the todo list 🤓",
           completed: true,
-          priority: "high",
+          priority: 3,
         },
       ],
     });
