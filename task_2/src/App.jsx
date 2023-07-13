@@ -15,7 +15,6 @@ function App() {
 
   const theme = createTheme({
     palette: {
-      //REVIEW - how does it work?
       mode: darkMode ? "dark" : "light",
     },
   });
@@ -36,7 +35,6 @@ function App() {
   //   return () => unsubscribe();
   // }, []);
   useEffect(() => {
-    console.log("yo");
     const unsubscribe = onAuthStateChanged(getAuth(), (user) => {
       setisLoggedIn(!!user);
       setIsLoading(false);

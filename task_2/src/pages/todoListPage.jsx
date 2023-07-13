@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { Container, Typography, List, ListItem, Fab } from "@mui/material";
+import { Container, Typography, List, ListItem } from "@mui/material";
 import Todo from "../components/todo";
-import { collection, onSnapshot, doc, where, query } from "firebase/firestore";
+import { collection, onSnapshot, where, query } from "firebase/firestore";
 import { db } from "../firebase.jsx";
-import AddIcon from "@mui/icons-material/Add";
+import AddTodoButton from "../components/addTodoButton";
 
 function TodoListPage({ user }) {
   const [todosArr, setTodosArr] = useState([]);
@@ -45,17 +45,7 @@ function TodoListPage({ user }) {
             </ListItem>
           ))}
         </List>
-        <Fab
-          sx={{
-            position: "absolute",
-            bottom: 16,
-            right: 16,
-          }}
-          aria-label='add'
-          color='primary'
-        >
-          <AddIcon />
-        </Fab>
+        <AddTodoButton user={user} />
       </Typography>
     </Container>
   );
