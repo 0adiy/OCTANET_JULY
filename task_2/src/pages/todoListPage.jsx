@@ -22,6 +22,8 @@ function TodoListPage({ user }) {
       setTodosArr(todos);
     });
 
+    //TODO - Add Sorting option
+
     return () => {
       unsubscribe();
     };
@@ -41,7 +43,7 @@ function TodoListPage({ user }) {
         >
           {todosArr.map((todo, index) => (
             <ListItem key={index}>
-              <Todo todo={todo} />
+              <Todo todo={todo} user={user} />
             </ListItem>
           ))}
         </List>

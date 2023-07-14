@@ -23,17 +23,6 @@ function App() {
     setDarkMode(!darkMode);
   };
 
-  // useEffect(() => {
-  //   const unsubscribe = onAuthStateChanged(getAuth(), (user) => {
-  //     if (user) {
-  //       console.log(user);
-  //       setIsLoading(false);
-  //       setisLoggedIn(true);
-  //       setUser(user);
-  //     } else setisLoggedIn(false);
-  //   });
-  //   return () => unsubscribe();
-  // }, []);
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(getAuth(), (user) => {
       setisLoggedIn(!!user);
@@ -58,7 +47,6 @@ function App() {
           }}
         >
           <CircularProgress />
-          {/* <CircularProgress /> */}
         </div>
       ) : (
         <Box>
@@ -66,8 +54,7 @@ function App() {
             onThemeChange={handleThemeChange}
             isDark={darkMode}
             isLoggedIn={isLoggedIn}
-            setisLoggedIn={setisLoggedIn}
-            setUser={setUser}
+            user={user}
           />
           {isLoggedIn ? <TodoListPage user={user} /> : <LandingPage />}
         </Box>

@@ -37,7 +37,9 @@ export default function AddTodoButton({ user }) {
     setPriority("");
   };
 
-  const handleAddTodo = async () => {
+  const handleAddTodo = async (e) => {
+    e.preventDefault();
+    if (!task || !priority) return;
     const newTodo = { text: task, priority, completed: false };
     const q = query(collection(db, "users"), where("uid", "==", user.uid));
 
@@ -65,41 +67,43 @@ export default function AddTodoButton({ user }) {
       </Fab>
       <Dialog open={open} onClose={handleClose}>
         <DialogTitle>Add Todo</DialogTitle>
-        <DialogContent>
-          <List>
-            <ListItem>
-              <TextField
-                label='Text'
-                value={task}
-                onChange={(event) => setTask(event.target.value)}
-                fullWidth
-                required
-                error={task.length === 0}
-              />
-            </ListItem>
-            <ListItem>
-              <FormControl fullWidth required error={priority.length === 0}>
-                <InputLabel id='priority'>Priority</InputLabel>
-                <Select
-                  labelId='priority'
-                  id='priority-select'
-                  value={priority}
-                  label='Priority'
-                  onChange={(event) => setPriority(event.target.value)}
-                >
-                  <MenuItem value=''>None</MenuItem>
-                  <MenuItem value={3}>High</MenuItem>
-                  <MenuItem value={2}>Medium</MenuItem>
-                  <MenuItem value={1}>Low</MenuItem>
-                </Select>
-              </FormControl>
-            </ListItem>
-          </List>
-        </DialogContent>
-        <DialogActions>
-          <Button onClick={handleClose}>Cancel</Button>
-          <Button onClick={handleAddTodo}>Add</Button>
-        </DialogActions>
+        <form onSubmit={handleAddTodo}>
+          <DialogContent>
+            <List>
+              <ListItem>
+                <TextField
+                  label='Text'
+                  value={task}
+                  onChange={(event) => setTask(event.target.value)}
+                  fullWidth
+                  required
+                  error={task.length === 0}
+                />
+              </ListItem>
+              <ListItem>
+                <FormControl fullWidth required error={priority.length === 0}>
+                  <InputLabel id='priority'>Priority</InputLabel>
+                  <Select
+                    labelId='priority'
+                    id='priority-select'
+                    value={priority}
+                    label='Priority'
+                    onChange={(event) => setPriority(event.target.value)}
+                  >
+                    <MenuItem value=''>None</MenuItem>
+                    <MenuItem value={3}>High</MenuItem>
+                    <MenuItem value={2}>Medium</MenuItem>
+                    <MenuItem value={1}>Low</MenuItem>
+                  </Select>
+                </FormControl>
+              </ListItem>
+            </List>
+          </DialogContent>
+          <DialogActions>
+            <Button onClick={handleClose}>Cancel</Button>
+            <Button type='submit'>Add</Button>
+          </DialogActions>
+        </form>
       </Dialog>
     </>
   );

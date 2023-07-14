@@ -2,21 +2,12 @@
 import { initializeApp } from "firebase/app";
 import firebaseConfig from "./firebaseconfig";
 import {
-  GoogleAuthProvider,
   getAuth,
-  signInWithPopup,
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
   signOut,
 } from "firebase/auth";
-import {
-  getFirestore,
-  query,
-  getDocs,
-  collection,
-  where,
-  addDoc,
-} from "firebase/firestore";
+import { getFirestore, collection, addDoc } from "firebase/firestore";
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
@@ -45,12 +36,12 @@ async function registerWithEmailAndPassword(email, password) {
         {
           text: "Call mom",
           completed: false,
-          priority: 3,
+          priority: 1,
         },
         {
           text: "Customize the todo list 🤓",
           completed: true,
-          priority: 3,
+          priority: 1,
         },
       ],
     });
