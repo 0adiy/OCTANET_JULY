@@ -23,8 +23,62 @@ Before running the app, make sure you have the following installed:
 
 - Node.js
 - npm (or yarn)
+<details>
+   <summary><h3 style="display:inline;">Getting Started</h3></summary>
+   
+   1. Clone the repository:
+   ```bash
+   git clone https://github.com/0adiy/OCTANET_JULY
+   ```
+   
+   2. Install dependencies:
+   ```bash
+   cd task2
+   npm install
+   ```
+   or
+   ```bash
+   cd task2
+   yarn
+   ```
+   
+   3. Set up Firebase:
+   
+      - Create a new Firebase project at [https://console.firebase.google.com](https://console.firebase.google.com).
+      - Enable Authentication and Firestore in the Firebase project settings.
+      - Copy the Firebase configuration object from the project settings and replace the placeholders in the `src/firebase.js` file.
+   
+   4. Start the development server:
+   ```bash
+   npm run dev
+   ```
+   or
+   ```bash
+   yarn dev
+   ```
+   
+   5. Open the app in your browser:
+   ```bash
+   http://localhost:5173/
+   ```
+</details>
 
-### Getting Started
+---
+## Youtube clone
+
+This is a simple frontend clone of youtube built with Vite and React. The app is hosted on Vercel.
+
+Vercel Link: https://octanet-july-task3.vercel.app/
+
+### Prerequisites
+
+Before running the app, make sure you have the following installed:
+
+- Node.js
+- npm (or yarn)
+
+<details>
+   <summary><h3 style="display:inline;">Getting Started</h3></summary>
 
 1. Clone the repository:
 ```bash
@@ -33,22 +87,16 @@ git clone https://github.com/0adiy/OCTANET_JULY
 
 2. Install dependencies:
 ```bash 
-cd task2
+cd task3
 npm install
 ```
 or
 ```bash 
-cd task2
+cd task3
 yarn
 ```
 
-3. Set up Firebase:
-
-   - Create a new Firebase project at [https://console.firebase.google.com](https://console.firebase.google.com).
-   - Enable Authentication and Firestore in the Firebase project settings.
-   - Copy the Firebase configuration object from the project settings and replace the placeholders in the `src/firebase.js` file.
-
-4. Start the development server:
+3. Start the development server:
 ```bash 
 npm run dev
 ```
@@ -57,7 +105,8 @@ or
 yarn dev
 ```
 
-5. Open the app in your browser:
+4. Open the app in your browser:
 ```bash 
 http://localhost:5173/
 ```
+</details>
