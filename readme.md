@@ -2,7 +2,7 @@
 ## Landing page
 Task 1 is a landing page in neo Brutalist comic style celebrating the DC superhero superman. This project is built with vanilla html,css and js with some small libs and hosted on vercel.
 
-Vercel Link: https://octanet-july-task2.vercel.app/
+Vercel Link: https://octanet-july.vercel.app/
 
 ---
 ## Todo List App
