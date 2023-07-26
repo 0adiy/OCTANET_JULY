@@ -1,9 +1,9 @@
 import "./App.css";
 import { useState } from "react";
 import Header from "./components/Header";
-import RecommendedVideos from "./components/RecommendedVideos";
 import Sidebar from "./components/Sidebar";
-import SearchPage from "./components/SearchPage";
+import SearchPage from "./pages/SearchPage";
+import RecommendedVideos from "./pages/RecommendedVideos";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 
